@@ -7,6 +7,8 @@ notas.size(); #tamanho
 notas.contains(5d); #verifica se o valor escolhido contem na lista
 Collections.min(notas); #exibe o menor valor do array de notas
 Collections.max(notas); #exibe o maior valor do array de notas
+Set<Double> notas2 = new LinkedHashSet<>(notas); #organiza a lista 
+Set<Double> notas2 = new TreeSet<>(notas); #organiza a lista 
 
   
 Iterator<Double> iterator = notas.iterator();
