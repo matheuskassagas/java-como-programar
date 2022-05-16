@@ -1,0 +1,24 @@
+Set<Double> notas = new HashSet<Double>();
+notas.add(7.0); #adiciona
+notas.remove(7.0); #remove
+notas.clear(); #limpa lista
+notas.isEmpty(); #retorna true ou false . (lista vazia ou nao)
+notas.size(); #tamanho
+notas.contains(5d); #verifica se o valor escolhido contem na lista
+Collections.min(notas); #exibe o menor valor do array de notas
+Collections.max(notas); #exibe o maior valor do array de notas
+
+  
+Iterator<Double> iterator = notas.iterator();
+        Double soma = 0d;
+        while(iterator.hasNext()){
+            Double next = iterator.next();
+            soma += next;
+        }
+
+ System.out.println("Remova as notas menores que 7 e exiba a lista: ");
+        Iterator<Double> iterator1 = notas.iterator();
+        while(iterator1.hasNext()) {
+            Double next = iterator1.next();
+            if(next < 7) iterator1.remove();
+        }
