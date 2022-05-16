@@ -1,0 +1,42 @@
+  Map<String, Double> carrosPopulares = new HashMap<>() {{
+            put("gol", 14.4);
+            put("uno", 15.6);
+            put("mobi", 16.1);
+            put("hb20", 14.5);
+            put("kwid", 15.6);
+        }};
+        
+        
+System.out.println("Substitua o consumo do gol por 15,2 km/l: ");
+        carrosPopulares.put("gol", 15.2);
+        
+        carrosPopulares.containsKey("gol"); #retorna true ou false verifica se contem a chave
+        carrosPopulares.get("uno"); #retorna o valor da chave uno
+        
+        Set<String> modelos = carrosPopulares.keySet(); #armazena todos as chaves na varivael 
+        System.out.println(modelos); #imprime a lista de modelos
+        
+        Collection<Double> consumos = carrosPopulares.values(); #armazena todos os valores de todas as chaves
+        System.out.println(consumos); #imprime a lista de consumo       
+      
+        
+        Double consumoMaisEficiente = Collections.max(carrosPopulares.values()); #pega o maior valor da lista 
+        Set<Map.Entry<String, Double>> entries = carrosPopulares.entrySet(); #pega todos as chaves e valores e armazena na lista entries
+        String modeloMaisEficiente = "";
+
+        for (Map.Entry<String, Double> entry : entries) {
+            if (entry.getValue().equals(consumoMaisEficiente)) { #entry.getValue() pega o valor da chave 
+                modeloMaisEficiente = entry.getKey(); #pega a chave
+                System.out.println("Modelo mais eficiente: " + modeloMaisEficiente + " - " + consumoMaisEficiente);
+            }
+        }
+        
+        
+        Iterator<Double> iterator = carrosPopulares.values().iterator();
+        Double soma = 0d;
+        while(iterator.hasNext()){
+            soma += iterator.next();
+        }
+        System.out.println("Exiba a soma dos consumos: " + soma);
+
+        System.out.println("Exiba a média dos consumos deste dicionário de carros: " + (soma/carrosPopulares.size()));
